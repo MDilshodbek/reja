@@ -29,6 +29,15 @@ res.end("<h1>Hello World by Oscar</h1>");
 
 app.get("/gift", function(req, res){
     res.end(`<h1>Siz sovg'alar packagedasiz</h1>`);
+})
+
+app.post("/create-item", (req, res) => {
+    console.log(req.body);
+    res.json({test: "success"})
+})
+
+app.get("/", function(req, res){
+    res.render(`harid`)
     
 })
 
