@@ -86,19 +86,19 @@
 // }
 // run()
 
-// const countLetter = (a, b) => {
+const countLetter = (a, b) => {
 
-//     let count = 0
+    let count = 0
     
-//     for (let i = 0; i < b.length; i++) {
-//        if (b[i] == a) {
-//         count++
-//        }
-//     }
+    for (let i = 0; i < b.length; i++) {
+       if (b[i] == a) {
+        count++
+       }
+    }
     
-//      return count;
-//     }
+     return count;
+    }
 
-//     console.log(countLetter("e", "engineer"));
+    console.log(countLetter("e", "engineer"));
     
     
