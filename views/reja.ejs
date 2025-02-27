@@ -16,12 +16,16 @@
 
         <div class="jumbotron p-3 shadow-sm">
             <form id="create-form" method="POST" action="/create-item">
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center" style="display: flex; gap: 20px;">
                    <input id="create-field" name="item" autofocus class="form-control mr-3" type="text" style="flex: 1"/>
-                   <button class="btn btn-primary" style="border-radius: 20px;"> Yangi Harid Qo'shish</button>
+                   <button class="btn btn-primary" style="border-radius: 20px;"> Yangi Reja Qo'shish</button>
                 </div>
             </form>
         </div>
+
+        <button id="clean-all" class="btn btn-danger" style="border-radius: 20px; margin-top: 20px;">
+            Hamma Rejalarni O'chirish
+        </button>
     </div>
     
 </body>
