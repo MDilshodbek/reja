@@ -101,4 +101,23 @@
 
 //     console.log(countLetter("e", "engineer"));
     
+console.log("B-Task");
+
+const countDigits = (a) => {
+
+   let numbers = 0;
+
+   for (const son of a) {
+      console.log(son);
+      
+       if (!isNaN(son) && son !== ' ') numbers++;
+   }
+   return numbers;
+};
+
+console.log(countDigits("ad2a54y79wet0sfgb9"));
+
+
+
+
     
