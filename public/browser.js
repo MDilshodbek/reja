@@ -30,3 +30,26 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
       console.log("Please try again!");
     });
 });
+
+document.addEventListener("click", function (e) {
+  // delete
+  console.log(e.target);
+
+  if (e.target.classList.contains("delete-me")) {
+    if (confirm("Aniq o'chirmoqchimisz?")) {
+      axios
+        .post("/delete-item", { id: e.target.getAttribute("data-id") })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.remove();
+        })
+        .catch((err) => {
+          console.log("Try again");
+        });
+    }
+  }
+
+  if (e.target.classList.contains("edit-me")) {
+    alert("siz edit tugmasini bosdiz");
+  }
+});

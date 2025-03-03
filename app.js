@@ -2,38 +2,41 @@ console.log("Web serverni boshlash");
 const express = require("express");
 const app = express();
 
-const res = require("express/lib/response")
-const fs = require("fs")
+const res = require("express/lib/response");
+const fs = require("fs");
 
 let user;
 fs.readFile("database/user.json", "utf8", (err, data) => {
-    if(err){
-        console.log("ERROR:", err);        
-    }else {
-        user = JSON.parse(data)
-    }
-})
+  if (err) {
+    console.log("ERROR:", err);
+  } else {
+    user = JSON.parse(data);
+  }
+});
 // MongoDB connect
-const db = require("./server").db()
- 
+const db = require("./server").db();
+const mongodb = require("mongodb");
 
 // Web server qurishda 4ta bosqich bor
 
 // step 1: Kirish code
 
 // to make the public folder available to see
-app.use(express.static("public")); 
+app.use(express.static("public"));
 // json formatdagi datani object holatga ozgartirib beradi
 app.use(express.json());
 // formga kiritilgan ma'lumotlar serverga post qilinganda express qabul qilib oladi
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 // Step 2 - session code
 
 // Step 3 - Views code/ backend site server rendering
 // npm i ejs
-app.set("views", "views"); - /* mentioning the folder */
-app.set("view engine", "ejs"); /* mentioning that the view engine is ejs */
+app.set("views", "views");
+-(
+  /* mentioning the folder */
+  app.set("view engine", "ejs")
+); /* mentioning that the view engine is ejs */
 
 // Step 4 - Routing code
 // app.get("/hello", function(req, res){
@@ -45,30 +48,42 @@ app.set("view engine", "ejs"); /* mentioning that the view engine is ejs */
 // })
 
 app.post("/create-item", (req, res) => {
-    console.log('user enterd /create-item');
-    const new_reja = req.body.reja
+  console.log("user enterd /create-item");
+  const new_reja = req.body.reja;
 
-    db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
-       console.log(data.ops);
-        res.json(data.ops[0])
-    })
-    // res.end("success")
-    // res.json({test: "success"})
-})
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    console.log(data.ops);
+    res.json(data.ops[0]);
+  });
+  // res.end("success")
+  // res.json({test: "success"})
+});
 
-app.get("/", function(req, res){
-    console.log('user entered /');
-    
-    db.collection("plans").find().toArray((err, data) => {
-        if (err) {
-            console.log(err);
-            res.end("smth went wrong")
-        } else {
-            console.log(data);
-            res.render("reja", {items: data})
-        }
-    })
-})
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    function (err, data) {
+      res.json({ state: "success" });
+    }
+  );
+});
+
+app.get("/", function (req, res) {
+  console.log("user entered /");
+
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log(err);
+        res.end("smth went wrong");
+      } else {
+        console.log(data);
+        res.render("reja", { items: data });
+      }
+    });
+});
 
 // app.get('/author', (req, res)=> {
 //     res.render("author", {user: user} )
