@@ -105,17 +105,24 @@ console.log("B-Task");
 
 const countDigits = (a) => {
 
-   let numbers = 0;
+   let numbers = 0
 
    for (const son of a) {
+
       console.log(son);
-      
        if (!isNaN(son) && son !== ' ') numbers++;
    }
    return numbers;
 };
 
 console.log(countDigits("ad2a54y79wet0sfgb9"));
+
+// const liste = ["ad2a54y79wet0sfgb9"];
+// const newListe = liste[0].split('').filter((ele) => {
+//   return ele === "7";
+// });
+
+// console.log("newListe", newListe);
 
 
 
