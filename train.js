@@ -117,66 +117,76 @@
 
 // console.log(countDigits("ad2a54y79wet0sfgb9"));
 
-console.log("Task - C");
+// console.log("Task - C");
 
-const moment = require("moment");
-const time = moment().format("HH:mm");
+// const moment = require("moment");
+// const time = moment().format("HH:mm");
 
-class Shop {
-  constructor(bread, jam, coffee) {
-    this.bread = bread;
-    this.jam = jam;
-    this.coffee = coffee;
-  }
+// class Shop {
+//   constructor(bread, jam, coffee) {
+//     this.bread = bread;
+//     this.jam = jam;
+//     this.coffee = coffee;
+//   }
 
-  add(product, quantity) {
-    if (this[product] !== undefined) {
-      this[product] += quantity;
-      console.log(
-        `At ${time} added ${quantity} ${product}(s).`
-      );
-    } else {
-      console.log(`Cannot add ${product}, it's not in stock.`);
-    }
-  }
+//   add(product, quantity) {
+//     if (this[product] !== undefined) {
+//       this[product] += quantity;
+//       console.log(
+//         `At ${time} added ${quantity} ${product}(s).`
+//       );
+//     } else {
+//       console.log(`Cannot add ${product}, it's not in stock.`);
+//     }
+//   }
 
-  sell(product, quantity) {
-    if (this[product] !== undefined && this[product] >= quantity) {
-      this[product] -= quantity;
-      console.log(
-        `at ${time} sold ${quantity} ${product}(s).`
-      );
-    } else {
-      console.log(`Not enough ${product} in stock or product does not exist.`);
-    }
-  }
+//   sell(product, quantity) {
+//     if (this[product] !== undefined && this[product] >= quantity) {
+//       this[product] -= quantity;
+//       console.log(
+//         `at ${time} sold ${quantity} ${product}(s).`
+//       );
+//     } else {
+//       console.log(`Not enough ${product} in stock or product does not exist.`);
+//     }
+//   }
 
-  remained() {
-    console.log(
-      `At ${time} we have : Bread = ${this.bread}, Jam = ${this.jam}, Coffee = ${this.coffee}`
-    );
-  }
-}
+//   remained() {
+//     console.log(
+//       `At ${time} we have : Bread = ${this.bread}, Jam = ${this.jam}, Coffee = ${this.coffee}`
+//     );
+//   }
+// }
 
-const myShop = new Shop(5, 5, 5);
-console.log(myShop);
+// const myShop = new Shop(5, 5, 5);
+// console.log(myShop);
 
-console.log("=====================");
+// console.log("=====================");
 
-setTimeout(() => {
-  myShop.add("bread", 2);
-  myShop.add("jam", 2);
-  myShop.add("coffee", 2);
-  console.log("=====================");
-}, 1000);
+// setTimeout(() => {
+//   myShop.add("bread", 2);
+//   myShop.add("jam", 2);
+//   myShop.add("coffee", 2);
+//   console.log("=====================");
+// }, 1000);
 
-setTimeout(() => {
-  myShop.sell("bread", 1);
-  myShop.sell("jam", 1);
-  myShop.sell("coffee", 2);
-  console.log("=====================");
-}, 3000);
+// setTimeout(() => {
+//   myShop.sell("bread", 1);
+//   myShop.sell("jam", 1);
+//   myShop.sell("coffee", 2);
+//   console.log("=====================");
+// }, 3000);
 
-setTimeout(() => {
-  myShop.remained();
-}, 5000);
+// setTimeout(() => {
+//   myShop.remained();
+// }, 5000);
+
+console.log("Task - D");
+
+const checkContent = (a, b) => {
+  return (
+    a.length === b.length &&
+    a.split("").sort().join("") === b.split("").sort().join("")
+  );
+};
+console.log(checkContent("mitgroup", "gmtiprou"));
