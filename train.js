@@ -181,12 +181,19 @@
 //   myShop.remained();
 // }, 5000);
 
-console.log("Task - D");
+// console.log("Task - D");
 
-const checkContent = (a, b) => {
-  return (
-    a.length === b.length &&
-    a.split("").sort().join("") === b.split("").sort().join("")
-  );
+// const checkContent = (a, b) => {
+//   return (
+//     a.length === b.length &&
+//     a.split("").sort().join("") === b.split("").sort().join("")
+//   );
+// };
+// console.log(checkContent("mitgroup", "gmtiprou"));
+
+console.log("Task - E");
+
+const getReverse = (a) => {
+  return a.split('').reverse().join('');
 };
-console.log(checkContent("mitgroup", "gmtiprou"));
+console.log(getReverse("oscar"));

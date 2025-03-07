@@ -31,8 +31,8 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
     });
 });
 
+// delete
 document.addEventListener("click", function (e) {
-  // delete
   console.log(e.target);
 
   if (e.target.classList.contains("delete-me")) {

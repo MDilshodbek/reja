@@ -2,7 +2,7 @@ console.log("Web serverni boshlash");
 const express = require("express");
 const app = express();
 
-const res = require("express/lib/response");
+// const res = require("express/lib/response");
 const fs = require("fs");
 
 let user;
