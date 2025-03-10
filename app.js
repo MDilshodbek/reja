@@ -33,10 +33,10 @@ app.use(express.urlencoded({ extended: true }));
 // Step 3 - Views code/ backend site server rendering
 // npm i ejs
 app.set("views", "views");
--(
-  /* mentioning the folder */
-  app.set("view engine", "ejs")
-); /* mentioning that the view engine is ejs */
+
+/* mentioning the folder */
+app.set("view engine", "ejs");
+/* mentioning that the view engine is ejs */
 
 // Step 4 - Routing code
 // app.get("/hello", function(req, res){
@@ -86,11 +86,10 @@ app.post("/edit-item", (req, res) => {
 app.post("/delete-all", (req, res) => {
   if (req.body.delete_all) {
     db.collection("plans").deleteMany(() => {
-      res.json({state: "hamma rejalar ochirildi"})
-    })
-    
+      res.json({ state: "hamma rejalar ochirildi" });
+    });
   }
-})
+});
 
 app.get("/", function (req, res) {
   console.log("user entered /");
