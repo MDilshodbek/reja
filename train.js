@@ -191,9 +191,22 @@
 // };
 // console.log(checkContent("mitgroup", "gmtiprou"));
 
-console.log("Task - E");
+// console.log("Task - E");
 
-const getReverse = (a) => {
-  return a.split('').reverse().join('');
+// const getReverse = (a) => {
+//   return a.split('').reverse().join('');
+// };
+// console.log(getReverse("oscar"));
+
+console.log("Task - F");
+
+const findDoublers = (a) => {
+  let ele = {};
+  for (let letter of a) {
+    if (ele[letter]) return true;
+    ele[letter] = 1;
+  }
+  return false;
 };
-console.log(getReverse("oscar"));
+
+console.log(findDoublers("hello"));
