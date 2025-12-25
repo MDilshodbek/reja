@@ -103,19 +103,19 @@
 
 // console.log("B-Task");
 
-// const countDigits = (a) => {
+const countDigits = (a) => {
 
-//    let numbers = 0
+   let numbers = 0
 
-//    for (const son of a) {
+   for (const son of a) {
 
-//       console.log(son);
-//        if (!isNaN(son) && son !== ' ') numbers++;
-//    }
-//    return numbers;
-// };
+      console.log(son);
+       if (!isNaN(son) && son !== ' ') numbers++;
+   }
+   return numbers;
+};
 
-// console.log(countDigits("ad2a54y79wet0sfgb9"));
+console.log(countDigits("ad2a54y79wet0sfgb9"));
 
 // console.log("Task - C");
 
@@ -198,15 +198,15 @@
 // };
 // console.log(getReverse("oscar"));
 
-console.log("Task - F");
+// console.log("Task - F");
 
-const findDoublers = (a) => {
-  let ele = {};
-  for (let letter of a) {
-    if (ele[letter]) return true;
-    ele[letter] = 1;
-  }
-  return false;
-};
+// const findDoublers = (a) => {
+//   let ele = {};
+//   for (let letter of a) {
+//     if (ele[letter]) return true;
+//     ele[letter] = 1;
+//   }
+//   return false;
+// };
 
-console.log(findDoublers("hello"));
+// console.log(findDoublers("hello"));
